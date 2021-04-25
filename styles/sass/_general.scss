@@ -1,0 +1,28 @@
+h1, h2, h3, nav {
+    font-family: 'Khand', sans-serif;
+}
+
+p {
+    font-family: 'Jura', sans-serif;
+}
+
+.wrapper {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+body {
+    position: relative;
+}
+
+nav {
+    position: fixed;
+    bottom: 0;
+    right:0;
+    background-color: #FFE6DC;
+    padding: 30px;   
+}
+
+header, section, footer {
+    height: 100vh;
+}
