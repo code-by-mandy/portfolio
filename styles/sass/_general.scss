@@ -1,5 +1,35 @@
+/*primary and CTA colors*/
+$primary: #000000;
+$ctaOne: #FF5915;
+$ctaTwo: #002060;
+
+/*graphical and background colors*/
+$darkOutline: #807F7F;
+$lightOutline: #C8C8C8;
+$graphicHighlight: #FF814F;
+$lightBackground: #FFE6DC;
+$medBackground: #E79D7F;
+$darkBackground: #77351A;
+
+/*general*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 1.25rem;
+}
+
+body {
+    position: relative;
+}
+
 h1, h2, h3, nav {
     font-family: 'Khand', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 p {
@@ -7,22 +37,19 @@ p {
 }
 
 .wrapper {
-    max-width: 300px;
     margin: 0 auto;
-}
-
-body {
-    position: relative;
 }
 
 nav {
     position: fixed;
     bottom: 0;
     right:0;
-    background-color: #FFE6DC;
-    padding: 30px;   
-}
+    background-color: $lightBackground;
+    padding: 30px; 
 
-header, section, footer {
-    height: 100vh;
+    ul li {
+        list-style: none;
+        text-align: right;
+        padding-bottom: 15px;
+    } 
 }

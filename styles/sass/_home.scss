@@ -1,4 +1,30 @@
-nav.home {
-    border-radius: 100% 0 0 0;
-    width: 90%;
+.wrapper.home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        line-height: 1.2em;
+        margin: 1.2em;
+    }
+
+    p {
+        margin: 1.2em;
+    }
+
+    nav {
+        position: relative;
+        border-radius: 100% 0 0 0;
+        width: 90%;
+        align-self: flex-end;
+        justify-self: flex-end;
+    
+        ul {
+            padding-top: 1.2em;
+        }
+    
+        .active {
+            border-bottom: 2px solid $ctaOne;
+        }
+    }
 }

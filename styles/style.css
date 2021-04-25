@@ -105,8 +105,26 @@ textarea {
   overflow: hidden;
 }
 
+/*primary and CTA colors*/
+/*graphical and background colors*/
+/*general*/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 1.25rem;
+}
+
+body {
+  position: relative;
+}
+
 h1, h2, h3, nav {
   font-family: 'Khand', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 p {
@@ -114,12 +132,7 @@ p {
 }
 
 .wrapper {
-  max-width: 300px;
   margin: 0 auto;
-}
-
-body {
-  position: relative;
 }
 
 nav {
@@ -130,11 +143,45 @@ nav {
   padding: 30px;
 }
 
-header, section, footer {
-  height: 100vh;
+nav ul li {
+  list-style: none;
+  text-align: right;
+  padding-bottom: 15px;
 }
 
-nav.home {
+.wrapper.home {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.wrapper.home h1 {
+  line-height: 1.2em;
+  margin: 1.2em;
+}
+
+.wrapper.home p {
+  margin: 1.2em;
+}
+
+.wrapper.home nav {
+  position: relative;
   border-radius: 100% 0 0 0;
   width: 90%;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  justify-self: flex-end;
+}
+
+.wrapper.home nav ul {
+  padding-top: 1.2em;
+}
+
+.wrapper.home nav .active {
+  border-bottom: 2px solid #FF5915;
 }
