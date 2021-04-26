@@ -6,29 +6,16 @@
     justify-content: space-between;
 
     div {
-        margin: 30px;
+        margin:  30px 30px 0;
 
         h1 {
             line-height: 1.2em;
         }
 
         p {
-            margin-top: 1.2em;
+            margin-top: 0.6em;
         }
     }
 }
 
-    nav {
-        position: relative;
-        border-radius: 100% 0 0 0;
-        width: 90%;
-        height: 50vh;
-        align-self: flex-end;
-        justify-self: flex-end;
-        padding: 30px;
     
-        .active, a:hover {
-            border-bottom: 2px solid $ctaOne;
-            cursor: pointer;
-        }
-    }

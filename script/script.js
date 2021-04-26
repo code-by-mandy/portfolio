@@ -4,18 +4,23 @@ portfolio.init = () => {
     portfolio.toggleMain();
 }
 
+/*toggle visibility of page when clicked in nav*/
 portfolio.toggleMain = () => {
-    const contentClass = document.querySelectorAll(".wrapper");
 
-    contentClass.forEach (page => {
-        //store value of href
-        //store value of id
-        //store index of nodelist per id
-        //check if href of clicked element equal id value
-        //if yes, add class list staged to corresponding nodelist index content[0].classList.add("staged");
-
-        page.addEventListener('click', function() {
-            console.log(this);
+    const menu = document.querySelectorAll(".menu")
+    const pages = document.querySelectorAll("#home, #about, #projects, #contact")
+   
+    menu.forEach ( menuItem => {
+        menuItem.addEventListener('click', function() {
+            let menuID = this.hash;
+            let menuIDNoHash = menuID.slice(1);
+            pages.forEach (page => {                
+                if (menuIDNoHash === page.id) {
+                    page.classList.remove("sr-only");
+                } else {
+                    page.classList.add("sr-only");
+                }
+            })
         });
     })
 }

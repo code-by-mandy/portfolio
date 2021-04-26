@@ -138,7 +138,6 @@ a {
 
 .wrapper {
   margin: 0 auto;
-  visibility: hidden;
 }
 
 .staged {
@@ -149,8 +148,17 @@ nav {
   position: fixed;
   bottom: 0;
   right: 0;
-  background-color: #FFE6DC;
   padding: 30px;
+  background-color: #FFE6DC;
+  border-radius: 100% 0 0 0;
+  width: 90%;
+  height: 50vh;
+  padding: 30px 30px 0;
+}
+
+nav .active, nav a:hover {
+  border-bottom: 2px solid #FF5915;
+  cursor: pointer;
 }
 
 nav li {
@@ -174,7 +182,7 @@ nav li {
 }
 
 .wrapper.home div {
-  margin: 30px;
+  margin: 30px 30px 0;
 }
 
 .wrapper.home div h1 {
@@ -182,21 +190,5 @@ nav li {
 }
 
 .wrapper.home div p {
-  margin-top: 1.2em;
-}
-
-nav {
-  position: relative;
-  border-radius: 100% 0 0 0;
-  width: 90%;
-  height: 50vh;
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  justify-self: flex-end;
-  padding: 30px;
-}
-
-nav .active, nav a:hover {
-  border-bottom: 2px solid #FF5915;
-  cursor: pointer;
+  margin-top: 0.6em;
 }

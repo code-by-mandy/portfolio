@@ -9,27 +9,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Jura&family=Khand&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="wrapper home staged">
+    <header class="wrapper home staged" id="home">
         <div>
             <h1>Mandy Poon</h1>
-            <p>A UX developer building an inclusive world, one digital experience at a time.</p>
-        </div>            
-        <nav>
-            <ul>
-                <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">What I Bring</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+            <p>A UX Developer</p>
+            <p>Contributing to an inclusive world, one digital experience at a time.</p>
+        </div>       
     </header>
+    <nav>
+        <ul>
+            <li><a href="#home" class="active menu">Home</a></li>
+            <li><a href="#about" class="menu">What I Bring</a></li>
+            <li><a href="#projects" class="menu">Projects</a></li>
+            <li><a href="#contact" class="menu">Contact</a></li>
+        </ul>
+    </nav>
     <main>
-        <section class="wrapper about" id="about">
+        <section class="wrapper about sr-only" id="about">
             <h2>What I Bring</h2>
             <p>I’m a human-centered front-end web developer skilled in git collaboration, RESTful APIs, React.js, vanilla Javascript, SASS, CSS, HTML5, and Figma. </p>
             <p>I have a professional background in user experience (UX) design and adult education. Having lived in 5 countries and worked in non-profit and financial sectors, I am highly adaptable, empathetic, and bring an open, resourceful and goal-oriented approach to the team.</p>
         </section>
-        <section class="wrapper projects" id="projects">
+        <section class="wrapper projects sr-only" id="projects">
             <h2>Featured Projects</h2>
             <article class="project">
                 <h3>My Juno Journey</h3>
@@ -52,7 +53,7 @@
             </article>
         </section>
     </main>
-    <footer class="wrapper contact" id="contact">
+    <footer class="wrapper contact sr-only" id="contact">
             <h2>Get in touch</h2>
             <form action="submit">
                 <div>
