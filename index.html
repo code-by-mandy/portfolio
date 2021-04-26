@@ -6,30 +6,30 @@
     <title>Mandy's Portfolio</title>
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Jura&family=Khand&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Jura&family=Khand&display=swap" rel="stylesheet">
 </head>
-<body class="wrapper">
-    <header>
-        <div class="wrapper home">
+<body>
+    <header class="wrapper home staged">
+        <div>
             <h1>Mandy Poon</h1>
-            <p>A UX Developer building an inclusive world, one digital experience at a time.</p>
-            <nav>
-                <ul>
-                    <li><span class="active">Home</span></li>
-                    <li><span>About</span></li>
-                    <li><span>Projects</span></li>
-                    <li><span>Contact</span></li>
-                </ul>
-            </nav>
-        </div>
+            <p>A UX developer building an inclusive world, one digital experience at a time.</p>
+        </div>            
+        <nav>
+            <ul>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">What I Bring</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <section class="wrapper about">
-            <h2>Welcome</h2>
-            <p>I’m a human-centered front-end web developer with work experience in user experience (UX) design and adult education. Having lived in 5 countries and worked in non-profit and financial sectors, I am highly adaptable, empathetic, and bring an open, resourceful and goal-oriented approach to the team.</p>
-            <p>I’m experienced in git collaboration, RESTful APIs, React.js, vanilla Javascript, SASS, CSS, HTML5, and Figma.</p>
+        <section class="wrapper about" id="about">
+            <h2>What I Bring</h2>
+            <p>I’m a human-centered front-end web developer skilled in git collaboration, RESTful APIs, React.js, vanilla Javascript, SASS, CSS, HTML5, and Figma. </p>
+            <p>I have a professional background in user experience (UX) design and adult education. Having lived in 5 countries and worked in non-profit and financial sectors, I am highly adaptable, empathetic, and bring an open, resourceful and goal-oriented approach to the team.</p>
         </section>
-        <section class="wrapper projects">
+        <section class="wrapper projects" id="projects">
             <h2>Featured Projects</h2>
             <article class="project">
                 <h3>My Juno Journey</h3>
@@ -52,8 +52,7 @@
             </article>
         </section>
     </main>
-    <footer>
-        <div class="wrapper contact">
+    <footer class="wrapper contact" id="contact">
             <h2>Get in touch</h2>
             <form action="submit">
                 <div>
@@ -70,7 +69,7 @@
                 </div>
                 <button type="submit">Submit</button>
             </form>
-        </div>
     </footer>
+    <script src="script/script.js"></script>  
 </body>
 </html>

@@ -36,8 +36,18 @@ p {
     font-family: 'Jura', sans-serif;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 .wrapper {
     margin: 0 auto;
+    visibility: hidden;
+}
+
+.staged {
+    visibility: visible;
 }
 
 nav {
@@ -47,9 +57,10 @@ nav {
     background-color: $lightBackground;
     padding: 30px; 
 
-    ul li {
+    li {
         list-style: none;
         text-align: right;
         padding-bottom: 15px;
     } 
+
 }

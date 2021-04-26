@@ -131,8 +131,18 @@ p {
   font-family: 'Jura', sans-serif;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 .wrapper {
   margin: 0 auto;
+  visibility: hidden;
+}
+
+.staged {
+  visibility: visible;
 }
 
 nav {
@@ -143,7 +153,7 @@ nav {
   padding: 30px;
 }
 
-nav ul li {
+nav li {
   list-style: none;
   text-align: right;
   padding-bottom: 15px;
@@ -158,30 +168,35 @@ nav ul li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.wrapper.home h1 {
+.wrapper.home div {
+  margin: 30px;
+}
+
+.wrapper.home div h1 {
   line-height: 1.2em;
-  margin: 1.2em;
 }
 
-.wrapper.home p {
-  margin: 1.2em;
+.wrapper.home div p {
+  margin-top: 1.2em;
 }
 
-.wrapper.home nav {
+nav {
   position: relative;
   border-radius: 100% 0 0 0;
   width: 90%;
+  height: 50vh;
   -ms-flex-item-align: end;
       align-self: flex-end;
   justify-self: flex-end;
+  padding: 30px;
 }
 
-.wrapper.home nav ul {
-  padding-top: 1.2em;
-}
-
-.wrapper.home nav .active {
+nav .active, nav a:hover {
   border-bottom: 2px solid #FF5915;
+  cursor: pointer;
 }
