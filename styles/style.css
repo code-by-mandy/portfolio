@@ -145,26 +145,31 @@ a {
 }
 
 nav {
+  background-color: #FFE6DC;
   position: fixed;
   bottom: 0;
   right: 0;
-  padding: 30px;
-  background-color: #FFE6DC;
-  border-radius: 100% 0 0 0;
-  width: 90%;
-  height: 50vh;
   padding: 30px 30px 0;
-}
-
-nav .active, nav a:hover {
-  border-bottom: 2px solid #FF5915;
-  cursor: pointer;
+  width: 100%;
 }
 
 nav li {
   list-style: none;
   text-align: right;
   padding-bottom: 15px;
+}
+
+nav li .active, nav li a:hover {
+  border-bottom: 2px solid #FF5915;
+  cursor: pointer;
+}
+
+nav.minimized .pop_menu {
+  display: none;
+}
+
+nav.minimized .pop_menu.opened {
+  display: block;
 }
 
 .wrapper.home {
@@ -191,4 +196,10 @@ nav li {
 
 .wrapper.home div p {
   margin-top: 0.6em;
+}
+
+nav.home {
+  border-radius: 100% 0 0 0;
+  width: 90%;
+  height: 50vh;
 }
