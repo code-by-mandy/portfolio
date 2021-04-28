@@ -55,16 +55,29 @@ nav {
     bottom: 0;
     right:0;
     padding: 30px 30px 0;
-
-    .active, a:hover {
-        border-bottom: 2px solid $ctaOne;
-        cursor: pointer;
-    }
+    width: 100%;
 
     li {
         list-style: none;
         text-align: right;
         padding-bottom: 15px;
+
+        .active, a:hover {
+            border-bottom: 2px solid $ctaOne;
+            cursor: pointer;
+        }
     } 
+    
+    &.minimized 
+        {
+            .pop_menu {
+                display: none;
+            }
+
+            .pop_menu.opened {
+                display: block;
+            }
+
+        } 
 
 }

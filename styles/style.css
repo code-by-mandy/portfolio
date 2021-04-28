@@ -150,17 +150,26 @@ nav {
   bottom: 0;
   right: 0;
   padding: 30px 30px 0;
-}
-
-nav .active, nav a:hover {
-  border-bottom: 2px solid #FF5915;
-  cursor: pointer;
+  width: 100%;
 }
 
 nav li {
   list-style: none;
   text-align: right;
   padding-bottom: 15px;
+}
+
+nav li .active, nav li a:hover {
+  border-bottom: 2px solid #FF5915;
+  cursor: pointer;
+}
+
+nav.minimized .pop_menu {
+  display: none;
+}
+
+nav.minimized .pop_menu.opened {
+  display: block;
 }
 
 .wrapper.home {

@@ -8,6 +8,7 @@ portfolio.init = () => {
 
     portfolio.toggleMain();
     portfolio.clearActiveNav();
+    portfolio.minMenu();
 }
 
 /*toggle visibility of page when clicked in nav*/
@@ -51,12 +52,22 @@ portfolio.clearActiveNav = () => {
 
 /*change mobile menu style based on page*/
 portfolio.menuStyle = () => {
+    
+    //toggle css to show all if home  
     if (portfolio.chosenPageID !== "home") {
         portfolio.allNav.classList.remove("home");
     } else {
         portfolio.allNav.classList.add("home");
     }
+}
 
+/*minimize menu*/
+portfolio.minMenu = () => {
+    const openMenu = document.querySelector('.open_menu');
+    const menuList = document.querySelector('.pop_menu')
+    openMenu.addEventListener('click', function() {
+        menuList.classList.add("opened");
+    });
 }
 
 portfolio.init();
