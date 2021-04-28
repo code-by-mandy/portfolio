@@ -6,6 +6,7 @@ portfolio.init = () => {
     portfolio.menuList = document.querySelector('.pop_menu')
     portfolio.menu = document.querySelectorAll(".menu");
     portfolio.pages = document.querySelectorAll("#home, #about, #projects, #contact");
+    portfolio.openMenu = document.querySelector('.open_menu');
 
     portfolio.toggleMain();
     portfolio.clearActiveNav();
@@ -27,6 +28,8 @@ portfolio.toggleMain = () => {
                     page.classList.remove("sr-only");
                     portfolio.chosenPageID = page.id;
                     portfolio.menuList.classList.remove("opened");
+                    portfolio.openMenu.innerHTML = "Menu";
+                    portfolio.openMenu.hidden= false;   
                 } else {
                     page.classList.add("sr-only");
                 }
@@ -40,7 +43,7 @@ portfolio.clearActiveNav = () => {
     portfolio.allNav.addEventListener('click', function() {
         portfolio.menu.forEach ( menuItem => {
             if (menuItem === portfolio.chosenPage) {
-                menuItem.classList.add("active");                
+                menuItem.classList.add("active");   
             } else {
                 menuItem.classList.remove("active");
             }
@@ -53,9 +56,13 @@ portfolio.clearActiveNav = () => {
 
 /*show minimized menu */
 portfolio.minMenu = () => {
-    const openMenu = document.querySelector('.open_menu');
-    openMenu.addEventListener('click', function() {
-        portfolio.menuList.classList.add("opened");
+    portfolio.openMenu.addEventListener('click', function() {
+        portfolio.menuList.classList.toggle("opened");
+        if (portfolio.menuList.className === "pop_menu opened") {
+            portfolio.openMenu.innerHTML = "Close";
+        } else {
+            portfolio.openMenu.innerHTML = "Menu";
+        }        
     });
 }
 
@@ -69,7 +76,7 @@ portfolio.menuStyle = () => {
     } else {
         portfolio.allNav.classList.add("home");
         portfolio.allNav.classList.remove("minimized");
-        
+        portfolio.openMenu.hidden = true;     
     }
 }
 
