@@ -45,10 +45,6 @@ a {
     margin: 0 auto;
 }
 
-.staged {
-    visibility: visible;
-}
-
 nav {
     background-color: $lightBackground;
     position: fixed;
@@ -56,25 +52,31 @@ nav {
     right:0;
     padding: 30px 30px 0;
     width: 100%;
+    display: flex;
+    justify-content: flex-end;
 
-    li {
-        list-style: none;
-        text-align: right;
-        padding-bottom: 15px;
+    ul {
+        width: 30%;
 
-        .active, a:hover {
-            border-bottom: 2px solid $ctaOne;
-            cursor: pointer;
-        }
-    } 
+        li {
+            list-style: none;
+            text-align: right;
+            padding-bottom: 15px;
     
-    &.minimized 
+            .active, a:hover {
+                border-bottom: 2px solid $ctaOne;
+                cursor: pointer;
+            }
+        } 
+    }
+    
+    &.notHome 
         {
-            .pop_menu {
+            .menuList {
                 display: none;
             }
 
-            .pop_menu.opened {
+            .menuList.opened {
                 display: block;
             }
 
