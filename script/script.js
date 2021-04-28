@@ -68,7 +68,7 @@ portfolio.minMenu = () => {
 
 /*change mobile menu style based on page*/
 portfolio.menuStyle = () => {
-    
+   
     //toggle css to show all if home  
     if (portfolio.chosenPageID !== "home") {
         portfolio.allNav.classList.add("minimized");
