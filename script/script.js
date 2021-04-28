@@ -46,7 +46,10 @@ portfolio.clearActiveNav = () => {
 
 /*change mobile menu style based on page*/
 portfolio.menuStyle = () => {
-
+    //check page id value
+    //add css for hamburger as default
+    //add class for home
+    //toggle class if at home
 }
 
 portfolio.init();
