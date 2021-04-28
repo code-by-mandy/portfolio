@@ -2,21 +2,25 @@ const portfolio = {};
 
 portfolio.init = () => {
 
-    portfolio.allNav = document.querySelector('nav');
-    portfolio.menuList = document.querySelector('.pop_menu')
-    portfolio.menu = document.querySelectorAll(".menu");
+    /*namespace variables*/
+    portfolio.navElement = document.querySelector('nav');
+    portfolio.menuList = document.querySelector('.menuList')
+    portfolio.menuItems = document.querySelectorAll(".menuItem");
+    portfolio.openMenu = document.querySelector('.openMenu');
     portfolio.pages = document.querySelectorAll("#home, #about, #projects, #contact");
-    portfolio.openMenu = document.querySelector('.open_menu');
 
     portfolio.toggleMain();
     portfolio.clearActiveNav();
-    portfolio.minMenu();
+    portfolio.keyboardNav();
+
+    portfolio.openMenu.onclick = portfolio.toggleMenu;
+
 }
 
-/*toggle visibility of page when clicked in nav, close popup nav when page is chosen (line 29)*/
+/*toggle visibility of page when clicked in nav*/
 portfolio.toggleMain = () => {
    
-    portfolio.menu.forEach ( menuItem => {
+    portfolio.menuItems.forEach ( menuItem => {
         menuItem.addEventListener('click', function() {
 
             const chosenID = this.hash;
@@ -27,9 +31,12 @@ portfolio.toggleMain = () => {
                 if (chosenIDNoHash === page.id) {
                     page.classList.remove("sr-only");
                     portfolio.chosenPageID = page.id;
+
+                    /*close menu when page is chosen*/
                     portfolio.menuList.classList.remove("opened");
+                    portfolio.openMenu.hidden= false; 
                     portfolio.openMenu.innerHTML = "Menu";
-                    portfolio.openMenu.hidden= false;   
+
                 } else {
                     page.classList.add("sr-only");
                 }
@@ -40,8 +47,8 @@ portfolio.toggleMain = () => {
 
 /*toggle active class on nav*/
 portfolio.clearActiveNav = () => {
-    portfolio.allNav.addEventListener('click', function() {
-        portfolio.menu.forEach ( menuItem => {
+    portfolio.menuList.addEventListener('click', function() {
+        portfolio.menuItems.forEach ( menuItem => {
             if (menuItem === portfolio.chosenPage) {
                 menuItem.classList.add("active");   
             } else {
@@ -53,16 +60,28 @@ portfolio.clearActiveNav = () => {
     })
 }
 
-
-/*show minimized menu */
-portfolio.minMenu = () => {
-    portfolio.openMenu.addEventListener('click', function() {
+/*toggle visibility menu */
+portfolio.toggleMenu = () => {
         portfolio.menuList.classList.toggle("opened");
-        if (portfolio.menuList.className === "pop_menu opened") {
+        if (portfolio.menuList.className === "menuList opened") {
             portfolio.openMenu.innerHTML = "Close";
         } else {
             portfolio.openMenu.innerHTML = "Menu";
         }        
+}
+
+/*nav keyboard accessibility*/
+portfolio.keyboardNav = () => {
+    //pick key for nav
+    document.addEventListener("keydown", function(e) {
+        if (e.code === "F4") {
+            portfolio.toggleMenu();
+            portfolio.chosenPage.focus();
+        }
+
+        if (e.code === "Tab") {
+            
+        }
     });
 }
 
@@ -71,11 +90,11 @@ portfolio.menuStyle = () => {
     
     //toggle css to show all if home  
     if (portfolio.chosenPageID !== "home") {
-        portfolio.allNav.classList.add("minimized");
-        portfolio.allNav.classList.remove("home");
+        portfolio.navElement.classList.add("notHome");
+        portfolio.navElement.classList.remove("home");
     } else {
-        portfolio.allNav.classList.add("home");
-        portfolio.allNav.classList.remove("minimized");
+        portfolio.navElement.classList.add("home");
+        portfolio.navElement.classList.remove("notHome");
         portfolio.openMenu.hidden = true;     
     }
 }
