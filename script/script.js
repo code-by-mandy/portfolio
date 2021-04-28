@@ -14,7 +14,7 @@ portfolio.init = () => {
     portfolio.keyboardNav();
 
     portfolio.openMenu.onclick = portfolio.toggleMenu;
-
+    portfolio.chosenPage = document.querySelector(".active")
 }
 
 /*toggle visibility of page when clicked in nav*/
@@ -72,16 +72,21 @@ portfolio.toggleMenu = () => {
 
 /*nav keyboard accessibility*/
 portfolio.keyboardNav = () => {
-    //pick key for nav
+    // identify page showing
     document.addEventListener("keydown", function(e) {
         if (e.code === "F4") {
             portfolio.toggleMenu();
             portfolio.chosenPage.focus();
         }
 
-        if (e.code === "Tab") {
-            
+        if (e.code === "Tab") {            
+            if (portfolio.chosenPageID !== "home") {
+                console.log(portfolio.chosenPageID);
+            }
+            //show message if first tab on page
         }
+
+        //trap focus until F4 or esc is pressed
     });
 }
 
