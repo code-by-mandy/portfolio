@@ -1,6 +1,8 @@
 const portfolio = {};
 
 portfolio.init = () => {
+
+    portfolio.allNav = document.querySelector('nav');
     portfolio.menu = document.querySelectorAll(".menu");
     portfolio.pages = document.querySelectorAll("#home, #about, #projects, #contact");
 
@@ -13,9 +15,12 @@ portfolio.toggleMain = () => {
    
     portfolio.menu.forEach ( menuItem => {
         menuItem.addEventListener('click', function() {
+
             const chosenID = this.hash;
             const chosenIDNoHash = chosenID.slice(1);
-            portfolio.pages.forEach (page => {                
+            portfolio.chosenPage = this;
+
+            portfolio.pages.forEach (page => {  
                 if (chosenIDNoHash === page.id) {
                     page.classList.remove("sr-only");
                     portfolio.chosenPageID = page.id;
@@ -23,7 +28,6 @@ portfolio.toggleMain = () => {
                     page.classList.add("sr-only");
                 }
             });
-            portfolio.chosenPage = this;
         });
     })
 }
@@ -31,9 +35,8 @@ portfolio.toggleMain = () => {
 /*toggle active class on nav*/
 portfolio.clearActiveNav = () => {
 
-    const allNav = document.querySelector('nav');
 
-    allNav.addEventListener('click', function() {
+    portfolio.allNav.addEventListener('click', function() {
         portfolio.menu.forEach ( menuItem => {
             if (menuItem === portfolio.chosenPage) {
                 menuItem.classList.add("active");
@@ -41,11 +44,18 @@ portfolio.clearActiveNav = () => {
                 menuItem.classList.remove("active");
             }
         })
+
+        portfolio.menuStyle();
     })
 }
 
 /*change mobile menu style based on page*/
 portfolio.menuStyle = () => {
+    if (portfolio.chosenPageID !== "home") {
+        portfolio.allNav.classList.remove("home");
+    } else {
+        portfolio.allNav.classList.add("home");
+    }
 
 }
 
