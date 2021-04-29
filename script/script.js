@@ -38,7 +38,7 @@ portfolio.toggleMain = () => {
                     /*close menu when page is chosen*/
                     portfolio.menuList.classList.remove("opened");
                     portfolio.openMenu.hidden= false; 
-                    portfolio.openMenu.innerHTML = "Menu";
+                    portfolio.openMenu.innerHTML = "Menu (F4 to open)";
 
                     /*reset keyboard nav tab count*/
                     portfolio.tabCounter = 0;          
@@ -69,10 +69,11 @@ portfolio.clearActiveNav = () => {
 /*toggle visibility menu */
 portfolio.toggleMenu = () => {
         portfolio.menuList.classList.toggle("opened");
+        portfolio.chosenPage.focus();
         if (portfolio.menuList.className === "menuList opened") {
-            portfolio.openMenu.innerHTML = "Close";
+            portfolio.openMenu.innerHTML = "Close (F4 to close)";
         } else {
-            portfolio.openMenu.innerHTML = "Menu";
+            portfolio.openMenu.innerHTML = "Menu (F4 to open)";
         }        
 }
 
@@ -84,21 +85,6 @@ portfolio.keyboardNav = () => {
         if (e.code === "F4") {
             portfolio.toggleMenu();
             portfolio.chosenPage.focus();
-        }
-
-        if (e.code === "ShiftLeft" || e.code === "ShiftRight") {
-            portfolio.tabCounter = portfolio.tabCounter - 2;
-        }
-
-        if (e.code === "Tab") {  
-            if (portfolio.chosenPageID === "about" || portfolio.chosenPageID === "projects" || portfolio.chosenPageID === "contact") {
-                portfolio.tabCounter ++;
-            }
-            //open menu per visual tab order per page
-            if ((portfolio.tabCounter === 1 && portfolio.chosenPageID === "about") || (portfolio.tabCounter === 9 && portfolio.chosenPageID === "projects") || (portfolio.tabCounter === 5 && portfolio.chosenPageID === "contact")) {
-                portfolio.toggleMenu();
-                portfolio.chosenPage.focus();
-            }
         }
     });
 }
