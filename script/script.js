@@ -6,18 +6,14 @@ portfolio.init = () => {
     portfolio.navElement = document.querySelector('nav');
     portfolio.menuList = document.querySelector('.menuList')
     portfolio.menuItems = document.querySelectorAll(".menuItem");
-    portfolio.openMenu = document.querySelector('.openMenu');
     portfolio.pages = document.querySelectorAll("#home, #about, #projects, #contact");
-    portfolio.tabMsg = document.querySelector(".tabMsg");
 
 
     portfolio.toggleMain();
     portfolio.clearActiveNav();
     portfolio.keyboardNav();
 
-    portfolio.openMenu.onclick = portfolio.toggleMenu;
     portfolio.chosenPage = document.querySelector(".active")
-    portfolio.tabCounter = 0;          
 }
 
 /*toggle visibility of page when clicked in nav*/
@@ -34,14 +30,6 @@ portfolio.toggleMain = () => {
                 if (chosenIDNoHash === page.id) {
                     page.classList.remove("sr-only");
                     portfolio.chosenPageID = page.id;
-
-                    /*close menu when page is chosen*/
-                    portfolio.menuList.classList.remove("opened");
-                    portfolio.openMenu.hidden= false; 
-                    portfolio.openMenu.innerHTML = "Menu (F4 to open)";
-
-                    /*reset keyboard nav tab count*/
-                    portfolio.tabCounter = 0;          
 
                 } else {
                     page.classList.add("sr-only");
@@ -66,17 +54,6 @@ portfolio.clearActiveNav = () => {
     })
 }
 
-/*toggle visibility menu */
-portfolio.toggleMenu = () => {
-        portfolio.menuList.classList.toggle("opened");
-        portfolio.chosenPage.focus();
-        if (portfolio.menuList.className === "menuList opened") {
-            portfolio.openMenu.innerHTML = "Close (F4 to close)";
-        } else {
-            portfolio.openMenu.innerHTML = "Menu (F4 to open)";
-        }        
-}
-
 /*nav keyboard accessibility*/
 portfolio.keyboardNav = () => {
     // identify page showing
@@ -99,7 +76,6 @@ portfolio.menuStyle = () => {
     } else {
         portfolio.navElement.classList.add("home");
         portfolio.navElement.classList.remove("notHome");
-        portfolio.openMenu.hidden = true;     
     }
 }
 

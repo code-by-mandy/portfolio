@@ -119,6 +119,7 @@ html {
 
 body {
   position: relative;
+  height: 100vh;
 }
 
 h1, h2, h3, nav {
@@ -127,46 +128,38 @@ h1, h2, h3, nav {
   letter-spacing: 0.1em;
 }
 
-p {
+p, a {
   font-family: 'Jura', sans-serif;
+  margin-top: 0.6em;
 }
 
 a {
-  text-decoration: none;
   color: black;
+  display: inline-block;
 }
 
 .wrapper {
   margin: 0 auto;
+  padding: 30px 30px 120px;
 }
 
 nav {
-  background-color: #FFE6DC;
   position: fixed;
+  background-color: #FFE6DC;
   bottom: 0;
   right: 0;
-  padding: 30px 30px 0;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-nav ul {
-  width: 50%;
+  padding: 30px 15px;
 }
 
 nav ul li {
   list-style: none;
-  text-align: right;
-  padding-bottom: 15px;
+}
+
+nav ul li a {
+  font-size: 0.65em;
+  padding-bottom: 5px;
+  text-decoration: none;
 }
 
 nav ul li .active, nav ul li a:hover {
@@ -175,23 +168,14 @@ nav ul li .active, nav ul li a:hover {
 }
 
 nav.notHome .menuList {
-  display: none;
-}
-
-nav.notHome .menuList.opened {
-  display: block;
-}
-
-.tabMsg {
-  display: none;
-}
-
-.tabMsg.show {
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .wrapper.home {
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -204,20 +188,50 @@ nav.notHome .menuList.opened {
           justify-content: space-between;
 }
 
-.wrapper.home div {
-  margin: 30px 30px 0;
-}
-
-.wrapper.home div h1 {
+.wrapper.home h1 {
   line-height: 1.2em;
 }
 
-.wrapper.home div p {
-  margin-top: 0.6em;
+.wrapper.home p:last-child {
+  position: relative;
+  z-index: 30;
 }
 
 nav.home {
   border-radius: 100% 0 0 0;
   width: 90%;
-  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+nav.home ul {
+  padding-top: 30px;
+}
+
+nav.home ul li {
+  padding-bottom: 15px;
+}
+
+.about {
+  background-color: black;
+  color: white;
+}
+
+.projects h2 ~ .line {
+  border-bottom: 3px solid #002060;
+  width: 10%;
+}
+
+.projects article ~ .line {
+  border-bottom: 3px solid #FF5915;
+  width: 30%;
+  margin-top: 30px;
+}
+
+.projects .project {
+  margin-top: 30px;
 }

@@ -1,0 +1,18 @@
+.projects {
+
+    h2 ~ .line {
+        border-bottom: 3px solid $ctaTwo;
+        width: 10%;
+    }
+
+    article ~ .line {
+        border-bottom: 3px solid $ctaOne;
+        width: 30%;
+        margin-top: 30px;
+    }
+
+    .project {
+        margin-top: 30px;
+    }
+}
+

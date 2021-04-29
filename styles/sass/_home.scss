@@ -1,26 +1,32 @@
 .wrapper.home {
-    
-    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-
-    div {
-        margin:  30px 30px 0;
+    justify-content: space-between;;
 
         h1 {
             line-height: 1.2em;
         }
 
-        p {
-            margin-top: 0.6em;
+        p:last-child {
+            position: relative;
+            z-index: 30;
         }
-    }
 }
 
 nav.home {
     border-radius: 100% 0 0 0;
     width: 90%;
-    height: 50vh;
+    display: flex;
+    justify-content: flex-end;
+
+    ul {
+        padding-top: 30px;
+
+        li {
+            padding-bottom: 15px;
+        }
+
+    }
+    
 }
     
