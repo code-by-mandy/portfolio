@@ -3,12 +3,17 @@
     background-image: url('../assets/earth.png');
     background-repeat: no-repeat;
     background-position-y: 30px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
 
     form {
         display: flex;
         align-items: center;        
         flex-direction: column;
+        justify-content: center;
         
         div {
             display: flex;
@@ -24,7 +29,7 @@
                 border-radius: 8px;
                 border: 1px solid black;
                 padding: 0.25em;
-            }
+            }            
         }
         
     
@@ -36,6 +41,7 @@
             color: white;
             margin-top: 1em;
             position: relative;
+            font-size: 0.65em;
 
             &::after {
                 content: "";
@@ -46,8 +52,28 @@
                 border-radius: 100%;
                 right: -60%;
                 bottom: -30%;
+                z-index: 0;
             }
         }
 
-    }    
+    } 
+}
+
+@media (min-width: 750px) {
+
+    .contact {
+        background-image: url('../assets/desktop_contact.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position-y: top;
+        background-attachment: local;
+        
+        form {
+            border: 1px solid $darkOutline;
+            border-radius: 50%;
+            min-width: 400px;
+            min-height: 400px;
+            z-index: 50;
+        }
+    }
 }
