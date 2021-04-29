@@ -1,0 +1,53 @@
+.contact {
+
+    background-image: url('../assets/earth.png');
+    background-repeat: no-repeat;
+    background-position-y: 30px;
+    text-align: center;
+
+    form {
+        display: flex;
+        align-items: center;        
+        flex-direction: column;
+        
+        div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            label {
+                font-size: 0.6em;
+                margin-top: 1em;
+            }
+
+            input {
+                border-radius: 8px;
+                border: 1px solid black;
+                padding: 0.25em;
+            }
+        }
+        
+    
+        button {
+            border-radius: 32px;
+            border: none;
+            padding: 15px 30px;
+            background-color: $ctaTwo;
+            color: white;
+            margin-top: 1em;
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                background-color: $graphicHighlight;
+                width: 20px;
+                height: 20px;
+                border-radius: 100%;
+                right: -60%;
+                bottom: -30%;
+            }
+        }
+
+    }    
+}
