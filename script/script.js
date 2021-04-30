@@ -40,7 +40,7 @@ portfolio.scrolledNav = () => {
     const checkInView = (elem) => {
         const checkElemView = elem.getBoundingClientRect();
         return (
-            checkElemView.top <= 0 &&
+            checkElemView.top <= 30 &&
             checkElemView.bottom >= 0
             );
     };
