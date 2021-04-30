@@ -3,35 +3,14 @@ const portfolio = {};
 portfolio.init = () => {
 
     /*namespace variables*/
-    portfolio.navElement = document.querySelector('nav');
-    portfolio.menuList = document.querySelector('.menuList')
     portfolio.menuItems = document.querySelectorAll(".menuItem");
     portfolio.pages = document.querySelectorAll("#home, #about, #projects, #contact");
+    portfolio.tabMsg = document.querySelector(".tabMsg");
 
-
-    portfolio.toggleMain();
     portfolio.scrolledNav();
+    portfolio.keyboardNav();
+    portfolio.formSubmit();
 
-    portfolio.chosenPage = document.querySelector(".active")
-}
-
-/*toggle visibility of page when clicked in nav*/
-portfolio.toggleMain = () => {
-   
-    portfolio.menuItems.forEach ( menuItem => {
-        menuItem.addEventListener('click', function() {
-
-            const chosenID = this.hash;
-            const chosenIDNoHash = chosenID.slice(1);
-            portfolio.chosenPage = this;
-
-            portfolio.pages.forEach (page => {  
-                if (chosenIDNoHash === page.id) {
-                    portfolio.chosenPageID = page.id;
-                } 
-            });
-        });
-    })
 }
 
 /*change active on scroll*/
@@ -40,7 +19,7 @@ portfolio.scrolledNav = () => {
     const checkInView = (elem) => {
         const checkElemView = elem.getBoundingClientRect();
         return (
-            checkElemView.top <= 30 &&
+            checkElemView.top <= 300 &&
             checkElemView.bottom >= 0
             );
     };
@@ -57,13 +36,31 @@ portfolio.scrolledNav = () => {
             const viewIDNoHash = viewID.slice(1);
 
             if (viewIDNoHash === portfolio.inView.id) {
-                menuItem.classList.add("active");   
+                menuItem.classList.add("active");
+                portfolio.activePage = menuItem;   
             } else {
                 menuItem.classList.remove("active");
             }
         });
     }, false);
     
+}
+
+portfolio.keyboardNav = () => {    
+
+    document.addEventListener("keydown", function(e) {
+
+        if (e.code === "F4") {
+            portfolio.activePage.focus();
+        }
+    });
+}
+
+portfolio.formSubmit = () => {
+    const submit = document.querySelector("button");
+    submit.addEventListener("click", function(e) {
+        e.preventDefault();
+    })
 }
 
 portfolio.init();

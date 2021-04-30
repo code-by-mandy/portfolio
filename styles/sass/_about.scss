@@ -1,6 +1,6 @@
 .wrapper.about {
     color: white;
-    background-image: url('../assets/desktop_about.svg');
+    background-image: url('../assets/desktop_about.png');
     background-color: black;
     background-repeat: no-repeat;
     background-size: contain;
@@ -9,8 +9,7 @@
     min-height: 100vh;
 
     .aboutBody {
-        padding: 60px 60px 120px;
-        background-color: black;
+        padding: 60px;
     }
 }
 

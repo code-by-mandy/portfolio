@@ -1,8 +1,12 @@
 .projects {
+    h2 {
+        margin-top: 30px;
+    }
 
     h2 ~ .line {
         border-bottom: 3px solid $ctaTwo;
         width: 10%;
+        margin-bottom: 30px;
     }
 
     article ~ .line {
@@ -19,7 +23,7 @@
 @media (min-width: 750px) {
 
     .projects {
-        background-image: url('../assets/desktop_projects.svg');
+        background-image: url('../assets/desktop_projects.png');
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;

@@ -26,6 +26,11 @@ body {
     position: relative;
 }
 
+.wrapper {
+    margin: 0 auto;
+    padding: 30px 30px 120px;
+}
+
 h1, h2, h3, nav {
     font-family: 'Khand', sans-serif;
     text-transform: uppercase;
@@ -42,10 +47,23 @@ a {
     display: inline-block;
 }
 
-.wrapper {
-    margin: 0 auto;
-    padding: 30px 30px 120px;
+.tabMsg {
+    left: 100%;
+    position: absolute;
+    background: $darkBackground;
+    padding: 8px;
+    transform: translateY(-100%);
+    color: white;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    text-decoration: none;
 }
+
+.tabMsg:focus {
+    left: 0%;
+    background: $medBackground;
+    transform: translateY(0%);
+  }
 
 nav {
     position: fixed;
@@ -81,17 +99,17 @@ nav {
 @media (min-width: 400px) {
     nav {
         a{
-            font-size: 0.65em;
+            font-size: 0.70em!important;
         }
     }
 }
 
 @media (min-width: 850px) {
     nav {
-        bottom: calc(50vh - 150px);
+        bottom: calc(50vh - 140px);
         right: -100px;
-        width: 300px;
-        height: 300px;
+        width: 280px;
+        height: 280px;
         border-radius: 100%;
         display: flex;
         flex-direction: column;
@@ -103,6 +121,10 @@ nav {
             justify-content: center;
             text-align: right;
             margin-right: 110px;
+
+            a {
+                margin-bottom: 15px!important;
+            }
         }
     }
 }

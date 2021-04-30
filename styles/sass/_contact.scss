@@ -53,13 +53,14 @@
         background-repeat: no-repeat;
         background-size: contain;
         background-position-y: top;
-        background-attachment: local;
+        background-attachment: fixed;
+        padding: 30px;
         
         form {
             border: 1px solid $darkOutline;
             border-radius: 50%;
-            min-width: 400px;
-            min-height: 400px;
+            min-width: 450px;
+            min-height: 450px;
         }
     }
 }

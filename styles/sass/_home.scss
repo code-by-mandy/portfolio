@@ -1,19 +1,43 @@
 .wrapper.home {
-    background-image: url('../assets/desktop_home.svg');
+    background-image: url('../assets/desktop_home.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    background-position: top;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;;
+    
+    .homeBody {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
 
         h1 {
-            line-height: 1.2em;
+            line-height: 1em;
+            font-size: 4em;
         }
 
         p:last-child {
             position: relative;
             z-index: 30;
         }
+    }        
+}
+
+@media (min-width: 850px) {
+
+    .homeBody {
+        padding: 0 18% 0 15%;
+        
+        h1 {
+            line-height: 1.2em;        
+        }
+    }
+    
+}
+
+@media (min-width: 1015px) {
+    .wrapper.home {
+        background-size: contain!important;
+    }
 }
