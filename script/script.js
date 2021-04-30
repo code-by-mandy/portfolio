@@ -58,9 +58,17 @@ portfolio.keyboardNav = () => {
 
 portfolio.formSubmit = () => {
     const submit = document.querySelector("button");
+    const formMsg = document.querySelector(".formMsg");
+    const clearInput = document.querySelectorAll("input[type=Text]");
 
     submit.addEventListener("click", function(e) {
         e.preventDefault();
+        submit.classList.add("submitted");
+        formMsg.innerHTML = "Thank you!"
+        clearInput.forEach(input => {
+            input.value = "";
+            input.disabled = true;
+        })
     })
 }
 
