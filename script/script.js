@@ -62,7 +62,6 @@ portfolio.formSubmit = () => {
     const clearInput = document.querySelectorAll("input[type=Text]");
 
     submit.addEventListener("click", function(e) {
-        e.preventDefault();
         submit.classList.add("submitted");
         formMsg.innerHTML = "Thank you!"
         clearInput.forEach(input => {
