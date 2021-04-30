@@ -143,6 +143,7 @@ a {
 }
 
 .tabMsg {
+  display: none;
   left: 100%;
   position: absolute;
   background: #77351A;
@@ -204,6 +205,9 @@ nav ul li .active, nav ul li a:hover {
 }
 
 @media (min-width: 850px) {
+  .tabMsg {
+    display: block;
+  }
   nav {
     bottom: calc(50vh - 140px);
     right: -100px;
