@@ -10,8 +10,7 @@ portfolio.init = () => {
 
 
     portfolio.toggleMain();
-    portfolio.clearActiveNav();
-    portfolio.keyboardNav();
+    portfolio.scrolledNav();
 
     portfolio.chosenPage = document.querySelector(".active")
 }
@@ -28,55 +27,43 @@ portfolio.toggleMain = () => {
 
             portfolio.pages.forEach (page => {  
                 if (chosenIDNoHash === page.id) {
-                    page.classList.remove("sr-only");
                     portfolio.chosenPageID = page.id;
-
-                } else {
-                    page.classList.add("sr-only");
-                }
+                } 
             });
         });
     })
 }
 
-/*toggle active class on nav*/
-portfolio.clearActiveNav = () => {
-    portfolio.menuList.addEventListener('click', function() {
+/*change active on scroll*/
+portfolio.scrolledNav = () => {
+    
+    const checkInView = (elem) => {
+        const checkElemView = elem.getBoundingClientRect();
+        return (
+            checkElemView.top <= 0 &&
+            checkElemView.bottom >= 0
+            );
+    };
+
+    window.addEventListener('scroll', function () {
+        portfolio.pages.forEach ( page => {
+            if (checkInView(page)) {
+                portfolio.inView = page;
+            }
+        });
+
         portfolio.menuItems.forEach ( menuItem => {
-            if (menuItem === portfolio.chosenPage) {
+            const viewID = menuItem.hash;
+            const viewIDNoHash = viewID.slice(1);
+
+            if (viewIDNoHash === portfolio.inView.id) {
                 menuItem.classList.add("active");   
             } else {
                 menuItem.classList.remove("active");
             }
         });
-
-        portfolio.menuStyle();
-    })
-}
-
-/*nav keyboard accessibility*/
-portfolio.keyboardNav = () => {
-    // identify page showing
-    document.addEventListener("keydown", function(e) {
-
-        if (e.code === "F4") {
-            portfolio.toggleMenu();
-            portfolio.chosenPage.focus();
-        }
-    });
-}
-
-/*change mobile menu style based on page*/
-portfolio.menuStyle = () => {
-   
-    //toggle css to show all if home  
-    if (portfolio.chosenPageID !== "home") {
-        portfolio.navElement.classList.add("notHome");
-        portfolio.navElement.classList.remove("home");
-    } else {
-        portfolio.navElement.classList.add("home");
-        portfolio.navElement.classList.remove("notHome");
-    }
+    }, false);
+    
 }
 
 portfolio.init();

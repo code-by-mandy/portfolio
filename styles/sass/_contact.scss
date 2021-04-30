@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
 
     form {
         display: flex;
@@ -40,20 +40,7 @@
             background-color: $ctaTwo;
             color: white;
             margin-top: 1em;
-            position: relative;
             font-size: 0.65em;
-
-            &::after {
-                content: "";
-                position: absolute;
-                background-color: $graphicHighlight;
-                width: 20px;
-                height: 20px;
-                border-radius: 100%;
-                right: -60%;
-                bottom: -30%;
-                z-index: 0;
-            }
         }
 
     } 
@@ -73,7 +60,6 @@
             border-radius: 50%;
             min-width: 400px;
             min-height: 400px;
-            z-index: 50;
         }
     }
 }

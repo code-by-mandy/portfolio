@@ -24,7 +24,6 @@ html {
 
 body {
     position: relative;
-    height: 100vh;
 }
 
 h1, h2, h3, nav {
@@ -33,7 +32,7 @@ h1, h2, h3, nav {
     letter-spacing: 0.1em;
 }
 
-p, a {
+p, a, label {
     font-family: 'Jura', sans-serif;
     margin-top: 0.6em;
 }
@@ -58,6 +57,9 @@ nav {
 
     ul {
 
+        display: flex;
+        justify-content: space-around;
+
         li {
             list-style: none;
 
@@ -73,14 +75,6 @@ nav {
             }
         } 
     }
-    
-    &.notHome 
-        {   
-            .menuList {
-                display: flex;
-                justify-content: space-around;
-            }
-        } 
 
 }
 
