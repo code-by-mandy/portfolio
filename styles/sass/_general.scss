@@ -49,11 +49,10 @@ a {
 
 .tabMsg {
     display: none;
-    left: 100%;
+    left: -100%;
     position: absolute;
-    background: $darkBackground;
+    background: $darkOutline;
     padding: 8px;
-    transform: translateY(-100%);
     color: white;
     border-radius: 8px;
     transition: transform 0.3s;
@@ -62,8 +61,6 @@ a {
 
 .tabMsg:focus {
     left: 0%;
-    background: $medBackground;
-    transform: translateY(0%);
   }
 
 nav {

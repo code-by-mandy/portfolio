@@ -58,6 +58,7 @@ portfolio.keyboardNav = () => {
 
 portfolio.formSubmit = () => {
     const submit = document.querySelector("button");
+
     submit.addEventListener("click", function(e) {
         e.preventDefault();
     })
