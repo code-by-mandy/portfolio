@@ -436,6 +436,10 @@ nav ul li .active, nav ul li a:hover {
   background-color: #807F7F;
 }
 
+.contact form .message {
+  margin-bottom: 30px;
+}
+
 @media (min-width: 750px) {
   .contact {
     background-image: url("../assets/desktop_contact.png");
