@@ -81,7 +81,7 @@
         </section>
     </main>    
     <footer class="wrapper contact" id="contact">
-            <form action="submit" netlify name="contact">
+            <form action="POST" netlify name="contact">
                 <h2 class="formMsg">Get in touch</h2>
                 <div>
                     <label for="name">Name</label>
@@ -94,6 +94,9 @@
                 <div>
                     <label for="message">Message</label>
                     <input type="text" id="message">
+                </div>
+                <div class="capta">
+                    <div data-netlify-recapta="true"></div>
                 </div>
                 <button type="submit">Submit</button>
             </form>
