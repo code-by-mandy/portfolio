@@ -43,13 +43,11 @@ portfolio.scrolledNav = () => {
             }
         });
     }, false);
-    
 }
 
 portfolio.keyboardNav = () => {    
 
     document.addEventListener("keydown", function(e) {
-
         if (e.code === "F4") {
             portfolio.activePage.focus();
         }

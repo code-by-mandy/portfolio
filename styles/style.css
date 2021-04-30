@@ -200,9 +200,6 @@ nav ul li .active, nav ul li a:hover {
 }
 
 @media (min-width: 850px) {
-  .tabMsg {
-    display: block;
-  }
   nav {
     bottom: calc(50vh - 140px);
     right: -100px;
@@ -236,6 +233,12 @@ nav ul li .active, nav ul li a:hover {
   }
   nav .menuList a {
     margin-bottom: 15px !important;
+  }
+}
+
+@media (min-width: 900px) {
+  .tabMsg {
+    display: block;
   }
 }
 
