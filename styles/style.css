@@ -445,7 +445,7 @@ nav ul li .active, nav ul li a:hover {
   .contact form {
     border: 1px solid #807F7F;
     border-radius: 50%;
-    min-width: 450px;
-    min-height: 450px;
+    min-width: 500px;
+    min-height: 500px;
   }
 }
