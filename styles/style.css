@@ -443,8 +443,8 @@ nav ul li:last-of-type {
   .contact form {
     border: 1px solid #807F7F;
     border-radius: 50%;
-    min-width: 23em;
-    min-height: 22em;
+    min-width: 26em;
+    min-height: 26em;
     margin-bottom: 0;
   }
 }
