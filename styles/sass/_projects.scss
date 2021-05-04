@@ -1,7 +1,4 @@
 .projects {
-    h2 {
-        margin-top: 30px;
-    }
 
     h2 ~ .line {
         border-bottom: 3px solid $ctaTwo;
@@ -32,7 +29,9 @@
     }
 
     .projectsBody {
-        width: 50%;
+        width: calc(60% + 80px);
+        padding: 40px;
+        border-radius: 8px;
     }
 
 }

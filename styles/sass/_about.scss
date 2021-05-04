@@ -5,12 +5,8 @@
     background-repeat: no-repeat;
     background-size: contain;
     background-attachment: scroll;
-    padding: 0;
+    padding: 60px;
     min-height: 100vh;
-
-    .aboutBody {
-        padding: 60px;
-    }
 }
 
 @media (min-width: 750px) {
@@ -22,7 +18,7 @@
     }
 
     .aboutBody {
-        width: 50%;
+        width: 60%;
         padding: 0;
         background-color: transparent;
     }
