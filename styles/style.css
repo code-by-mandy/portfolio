@@ -180,7 +180,7 @@ nav ul li {
 }
 
 nav ul li a {
-  font-size: 0.5em;
+  font-size: 0.7em;
   padding-bottom: 5px;
   text-decoration: none;
 }
@@ -190,10 +190,8 @@ nav ul li .active, nav ul li a:hover {
   cursor: pointer;
 }
 
-@media (min-width: 20em) {
-  nav a {
-    font-size: 0.7em !important;
-  }
+nav ul li:last-of-type {
+  margin-right: 0;
 }
 
 @media (min-width: 50em) {
@@ -277,7 +275,7 @@ nav ul li .active, nav ul li a:hover {
   }
 }
 
-@media (min-width: 60em) {
+@media (min-width: 70em) {
   .wrapper.home {
     background-size: contain !important;
   }
@@ -412,8 +410,8 @@ nav ul li .active, nav ul li a:hover {
   width: 10em;
 }
 
-.contact form div textarea[name="name"] {
-  height: 1.7em;
+.contact form div textarea[name="name"], .contact form div input[type="email"] {
+  height: 2em;
 }
 
 .contact form button {

@@ -81,7 +81,7 @@ nav {
             margin-right: 10px;
 
             a {
-                font-size: 0.5em;
+                font-size: 0.7em;
                 padding-bottom: 5px;
                 text-decoration: none;
             }
@@ -91,16 +91,12 @@ nav {
                 cursor: pointer;
             }
         } 
-    }
 
-}
-
-@media (min-width: 20em) {
-    nav {
-        a{
-            font-size: 0.70em!important;
+        li:last-of-type {
+            margin-right: 0;
         }
     }
+
 }
 
 @media (min-width: 50em) {
