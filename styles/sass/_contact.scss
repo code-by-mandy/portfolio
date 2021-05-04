@@ -14,6 +14,7 @@
         align-items: center;        
         flex-direction: column;
         justify-content: center;
+        margin-bottom: 3em;
         
         div {
             display: flex;
@@ -59,7 +60,7 @@
     } 
 }
 
-@media (min-width: 750px) {
+@media (min-width: 41em) {
 
     .contact {
         background-image: url('../assets/desktop_contact.png');
@@ -72,8 +73,9 @@
         form {
             border: 1px solid $darkOutline;
             border-radius: 50%;
-            min-width: 540px;
-            min-height: 540px;
+            min-width: 23em;
+            min-height: 22em;
+            margin-bottom: 0;
         }
     }
 }

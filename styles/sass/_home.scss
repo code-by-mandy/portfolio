@@ -16,15 +16,10 @@
             line-height: 1em;
             font-size: 3em;
         }
-
-        p:last-child {
-            position: relative;
-            z-index: 30;
-        }
     }        
 }
 
-@media (min-width: 850px) {
+@media (min-width: 42em) {
 
     .homeBody {
         padding: 0 18% 0 15%;
@@ -37,7 +32,7 @@
     
 }
 
-@media (min-width: 1015px) {
+@media (min-width: 60em) {
     .wrapper.home {
         background-size: contain!important;
     }
