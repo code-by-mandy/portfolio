@@ -6,21 +6,19 @@
     background-size: contain;
     background-attachment: scroll;
     padding: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 @media (min-width: 50em) {
-
-    .about {
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
 
     .aboutBody {
         width: 60%;
         padding: 0;
         background-color: transparent;
+        display: block;
     }
 
 

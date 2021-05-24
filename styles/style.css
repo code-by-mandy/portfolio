@@ -289,25 +289,24 @@ nav ul li:last-of-type {
   background-size: contain;
   background-attachment: scroll;
   padding: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 100vh;
 }
 
 @media (min-width: 50em) {
-  .about {
-    min-height: 100vh;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
   .aboutBody {
     width: 60%;
     padding: 0;
     background-color: transparent;
+    display: block;
   }
 }
 
@@ -325,6 +324,54 @@ nav ul li:last-of-type {
 
 .projects .project {
   margin-top: 30px;
+}
+
+.projects .iconWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.projects .icons, .projects .iconWrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.projects .iconWrapper {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5px;
+}
+
+.projects .iconWrapper:first-of-type {
+  margin-right: 30px;
+}
+
+.projects .icon {
+  width: 2em;
+  height: 2em;
+}
+
+.projects .iconCaption {
+  font-size: 0.8em;
+  text-align: center;
+  margin-top: 5px;
 }
 
 @media (min-width: 50em) {

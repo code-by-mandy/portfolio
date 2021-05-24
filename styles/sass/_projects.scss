@@ -15,6 +15,38 @@
     .project {
         margin-top: 30px;
     }
+
+    .iconWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .icons, .iconWrapper {
+        display: flex;
+    }
+
+    .iconWrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5px;
+    }
+
+    .iconWrapper:first-of-type {
+        margin-right: 30px;
+    }
+
+    .icon {
+        width: 2em;
+        height: 2em;
+    }
+
+    .iconCaption {
+        font-size: 0.8em;
+        text-align: center;
+        margin-top: 5px;
+    }
 }
 
 @media (min-width: 50em) {
